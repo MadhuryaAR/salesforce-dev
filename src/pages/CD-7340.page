@@ -1,0 +1,22 @@
+<apex:page>
+    <script>
+        // Using octal escape sequences — invalid under ECMAScript 5+ (violations expected)
+        var a = "\045";   // Percent sign using octal escape
+        var b = "\012";   // Line feed in octal
+        var c = "\033[0m"; // ANSI escape sequence reset
+        var d = "\141\142\143"; // 'abc' using octal representation
+
+        // Mixing with normal string (still invalid)
+        var e = "Path\\012Folder"; // Escaped backslash followed by octal escape
+
+        // This one is valid — hexadecimal escape (should NOT trigger)
+        var f = "\x41\x42\x43"; // "ABC"
+
+        console.log(a, b, c, d, e, f);
+    </script>
+
+    <pre>
+        Octal examples that should be flagged:
+        \045 \012 \033 \141\142\143
+    </pre>
+</apex:page>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>System_Config__c</fullName>
+  <label>System Config</label>
+  <pluralLabel>System Configs</pluralLabel>
+  <nameField><type>Text</type><label>Name</label></nameField>
+  <deploymentStatus>Deployed</deploymentStatus>
+  <sharingModel>ReadWrite</sharingModel>
+  <fields>
+    <fullName>DatabasePassword__c</fullName>
+    <label>Database Password</label>
+    <type>Text</type>
+    <length>255</length>
+    <defaultValue>"P@ssw0rd123!"</defaultValue>
+    <description>Plaintext password to trigger secret detection.</description>
+  </fields>
+</CustomObject>

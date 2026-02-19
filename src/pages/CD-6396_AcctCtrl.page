@@ -1,0 +1,30 @@
+<apex:page controller="AcctCtrl">
+    <apex:form>
+        <apex:pageMessages />
+        
+        <apex:pageBlock title="Create Account">
+            <apex:pageBlockSection>
+                <apex:inputField value="{!acct.Name}" />
+                <apex:inputField value="{!acct.Industry}" />
+                <apex:inputField value="{!acct.Phone}" />
+                <apex:inputField value="{!acct.Type}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons>
+                <apex:commandButton value="Save" action="{!saveAccount}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Search Accounts">
+            <apex:pageBlockSection>
+                <apex:inputText value="{!searchName}" label="Account Name" />
+                <apex:commandButton value="Search" action="{!searchAccounts}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!acctList}" var="a">
+                <apex:column value="{!a.Name}" />
+                <apex:column value="{!a.Industry}" />
+                <apex:column value="{!a.Phone}" />
+                <apex:column value="{!a.Type}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

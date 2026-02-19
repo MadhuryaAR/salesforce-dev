@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+  <label>LeakTest</label>
+  <processType>Flow</processType>
+  <status>Active</status>
+
+  <!-- Regular variables (no secrets) -->
+  <variables>
+    <name>Account_Name</name>
+    <dataType>String</dataType>
+    <isCollection>false</isCollection>
+    <isInput>false</isInput>
+    <isOutput>false</isOutput>
+    <value>Test Account Name</value>
+  </variables>
+  <variables>
+    <name>Email_Address</name>
+    <dataType>String</dataType>
+    <isCollection>false</isCollection>
+    <isInput>false</isInput>
+    <isOutput>false</isOutput>
+    <value>test@example.com</value>
+  </variables>
+
+  <!-- Regular variable -->
+  <variables>
+    <name>Department</name>
+    <dataType>String</dataType>
+    <isCollection>false</isCollection>
+    <isInput>false</isInput>
+    <isOutput>false</isOutput>
+    <value>Sales Department</value>
+  </variables>
+
+  <!-- Regular variable -->
+  <variables>
+    <name>Region</name>
+    <dataType>String</dataType>
+    <isCollection>false</isCollection>
+    <isInput>false</isInput>
+    <isOutput>false</isOutput>
+    <value>North America</value>
+  </variables>
+
+  <!-- Simple Start element -->
+  <start>
+    <locationX>50</locationX>
+    <locationY>50</locationY>
+    <connector>
+      <targetReference>Update_Account</targetReference>
+    </connector>
+  </start>
+
+  <!-- Update element with no secrets -->
+  <recordUpdates>
+    <name>Update_Account</name>
+    <label>Update Account Record</label>
+    <locationX>200</locationX>
+    <locationY>50</locationY>
+    <recordUpdate>
+      <filters>
+        <field>Account.Id</field>
+        <operator>IsNull</operator>
+        <value>false</value>
+      </filters>
+      <inputAssignments>
+        <field>Account.Description__c</field>
+        <value>Updated by Flow</value>
+      </inputAssignments>
+      <object>Account</object>
+    </recordUpdate>
+  </recordUpdates>
+</Flow>

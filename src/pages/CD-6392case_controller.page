@@ -1,0 +1,32 @@
+<apex:page controller="case_controller">
+    <apex:form>
+        <apex:pageMessages />
+        
+        <apex:pageBlock title="Create Case">
+            <apex:pageBlockSection>
+                <apex:inputField value="{!caseRecord.Subject}" />
+                <apex:inputField value="{!caseRecord.Status}" />
+                <apex:inputField value="{!caseRecord.Priority}" />
+                <apex:inputField value="{!caseRecord.Origin}" />
+                <apex:inputField value="{!caseRecord.Description}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons>
+                <apex:commandButton value="Create Case" action="{!saveCase}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Search Cases">
+            <apex:pageBlockSection>
+                <apex:inputText value="{!searchSubject}" label="Search by Subject" />
+                <apex:commandButton value="Search" action="{!searchCases}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!caseList}" var="c">
+                <apex:column value="{!c.CaseNumber}" />
+                <apex:column value="{!c.Subject}" />
+                <apex:column value="{!c.Status}" />
+                <apex:column value="{!c.Priority}" />
+                <apex:column value="{!c.Origin}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

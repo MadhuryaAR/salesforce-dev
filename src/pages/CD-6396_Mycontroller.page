@@ -1,0 +1,30 @@
+<apex:page controller="MyController">
+    <apex:form >
+        <apex:pageMessages />
+
+        <apex:pageBlock title="Create Contact">
+            <apex:pageBlockSection>
+                <apex:inputField value="{!contactRecord.FirstName}" />
+                <apex:inputField value="{!contactRecord.LastName}" />
+                <apex:inputField value="{!contactRecord.Email}" />
+                <apex:inputField value="{!contactRecord.Phone}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons>
+                <apex:commandButton action="{!saveContact}" value="Save Contact" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Search Contacts">
+            <apex:pageBlockSection>
+                <apex:inputText value="{!searchLastName}" label="Last Name" />
+                <apex:commandButton value="Search" action="{!searchContacts}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!contactList}" var="c">
+                <apex:column value="{!c.FirstName}" />
+                <apex:column value="{!c.LastName}" />
+                <apex:column value="{!c.Email}" />
+                <apex:column value="{!c.Phone}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

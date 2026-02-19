@@ -1,0 +1,5 @@
+<apex:page>
+  <apex:form>
+    <apex:inputText value="{!name}"  <!-- Missing closing tag -->
+  </apex:form>
+</apex:page>

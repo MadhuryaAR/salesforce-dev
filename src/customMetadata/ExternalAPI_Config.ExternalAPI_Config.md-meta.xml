@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata">
+  <label>External API Config</label>
+  <protected>false</protected>
+  <values>
+    <field>API_Key__c</field>
+    <value><stringValue>sk_live_51JyxQzYZ1Zabc1234567890secretKey</stringValue></value>
+  </values>
+  <values>
+    <field>Base_URL__c</field>
+    <value><stringValue>https://api.external-service.com/v1</stringValue></value>
+  </values>
+</CustomMetadata>

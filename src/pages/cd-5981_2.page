@@ -1,0 +1,4 @@
+<apex:page> 
+  <apex:includeScript value="http://blah.blah.com"/>
+  <apex:stylesheet value="http://good.good.styles.com/css" />
+</apex:page>

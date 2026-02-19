@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Account</fullName>
+
+  <description>
+    Test-only:
+    AWS Access Key: AKIA1234567890ABCDEF
+    AWS Secret Key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    GitHub PAT: ghp_1234567890abcdef1234567890abcdef1234
+  </description>
+
+  <!-- Field that “stores” a generic API key to hit catch-all detectors -->
+  <fields>
+    <fullName>API_Key__c</fullName>
+    <label>API Key</label>
+    <type>Text</type>
+    <length>255</length>
+    <defaultValue>"api_key=ABCD-1234-efgh-5678-ijkl-9012"</defaultValue>
+    <description>FAKE key intended for scanner tests</description>
+  </fields>
+
+  <!-- Field that “stores” an OAuth bearer token -->
+  <fields>
+    <fullName>Bearer_Token__c</fullName>
+    <label>Bearer Token</label>
+    <type>LongTextArea</type>
+    <length>32768</length>
+    <visibleLines>3</visibleLines>
+    <defaultValue>
+"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.DUMMY.DUMMY"
+    </defaultValue>
+    <description>Fake JWT-like token</description>
+  </fields>
+
+  <!-- PEM block inside a help text (scanned as text) -->
+  <fields>
+    <fullName>Private_Key_Block__c</fullName>
+    <label>Private Key (Demo)</label>
+    <type>LongTextArea</type>
+    <length>32768</length>
+    <visibleLines>5</visibleLines>
+    <inlineHelpText>
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEA0fAkDUMMYDUMMYDUMMYDUMMYd7lN2r8oq7gZ0YF7xO2zXwY
+z0m4v2u1iF3kq2DUMMYDUMMYDUMMYDUMMYb8xKcY2d9QY9v8lKkQ/9Dk2nZ8QJ
+1dNY1i2+1b3qDUMMYDUMMYDUMMYDUMMYC3hQ3+S9Z0m6p7y3nOa1n
+-----END RSA PRIVATE KEY-----
+    </inlineHelpText>
+    <description>Fake PEM for scanner testing</description>
+  </fields>
+
+  <nameField>
+    <type>AutoNumber</type>
+    <label>Account Number</label>
+    <displayFormat>ACC-{00000}</displayFormat>
+  </nameField>
+  <deploymentStatus>Deployed</deploymentStatus>
+  <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,12 @@
+        //187
+        setTimeout(function() { console.log(this.message); }.bind({ message: 'Hello!' }), 1000);
+
+
+        // 186
+        let str = "JS\u0020Fun\u0021";
+        var foo = "Copyright \251";
+
+
+/*eslint no-octal-escape: "error"*/
+
+var foo = "Copyright \251";

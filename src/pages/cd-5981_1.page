@@ -1,0 +1,4 @@
+<apex:page>
+  <apex:includeScript value="{!$Resource.example_js}"/>
+  <apex:stylesheet value="{!$Resource.customCSS}" />
+</apex:page>

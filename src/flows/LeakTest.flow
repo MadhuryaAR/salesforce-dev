@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+  <label>LeakTest</label>
+  <processType>Flow</processType>
+  <status>Active</status>
+
+  <!-- Some regular variables first -->
+  <variables>
+    <name>Account_Name</name>
+    <dataType>String</dataType>
+    <value>Test Account</value>
+  </variables>
+
+  <variables>
+    <name>Email_Address</name>
+    <dataType>String</dataType>
+    <value>test@example.com</value>
+  </variables>
+
+  <!-- Line 25: GitHub Personal Access Token -->
+  <variables>
+    <name>GitHub_Token</name>
+    <dataType>String</dataType>
+    <value>ghp_1234567890abcdef1234567890abcdef1234</value>
+  </variables>
+
+  <variables>
+    <name>Department</name>
+    <dataType>String</dataType>
+    <value>Sales</value>
+  </variables>
+
+  <!-- Line 39: Slack Bot Token -->
+  <variables>
+    <name>Slack_Token</name>
+    <dataType>String</dataType>
+    <value>xoxb-123456789012-123456789012-AbCdEfGhIjKlMnOpQrStUvWx</value>
+  </variables>
+
+  <variables>
+    <name>Region</name>
+    <dataType>String</dataType>
+    <value>North America</value>
+  </variables>
+
+  <!-- Line 53: Private Key in PEM format -->
+  <textTemplates>
+    <name>Certificate</name>
+    <text>
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC7VJTUt9Us8cKj
+-----END PRIVATE KEY-----
+    </text>
+  </textTemplates>
+
+  <start>
+    <locationX>50</locationX>
+    <locationY>50</locationY>
+  </start>
+
+</Flow>

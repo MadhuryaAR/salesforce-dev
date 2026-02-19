@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+  <label>Send To Slack</label>
+  <status>Active</status>
+  <variables>
+    <name>slackToken</name>
+    <dataType>String</dataType>
+    <isCollection>false</isCollection>
+    <isInput>true</isInput>
+    <defaultValue><stringValue>xoxb-1234567890-0987654321-AbCdEfGhIjKlMnOpQrStUvWx</stringValue></defaultValue>
+  </variables>
+</Flow>
