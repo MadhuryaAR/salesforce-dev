@@ -67,4 +67,20 @@ public with sharing class ContactSearcherUnsafe {
         return Database.query(query);
     }
 }
+
+
+public with sharing class ContactSorterUnsafe1 {
+    public List<Contact> sortContacts() {
+        String sortField = ApexPages.currentPage().getParameters().get('sort');
+        String query = 'SELECT Name FROM Contact ORDER BY ' + sortField;
+        return Database.query(query);
+    }
+}
+public with sharing class ContactSearcherUnsafe1 {
+    public List<Contact> searchContacts() {
+        String name = ApexPages.currentPage().getParameters().get('name');
+        String query = 'SELECT Id FROM Contact WHERE Name LIKE \'%' + name + '%\'';
+        return Database.query(query);
+    }
+}
 codescan
