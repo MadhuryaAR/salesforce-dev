@@ -314,7 +314,7 @@ public class FieldSecurityIssuesTest {
     public void testMethod6_user_Update(){
     List<Contact> contactsToUpdate = [SELECT Id, FirstName, LastName, Account.Name FROM Contact WHERE Account.Industry = 'Finance' with USER_MODE];
         for(Contact con : contactsToUpdate) {
-            if(con.Id != null){
+            if(con.Id != null) {
             con.FirstName = 'Updated First Name';
             con.LastName = 'Updated Last Name';
             }
@@ -955,3 +955,4 @@ public class FieldSecurityIssuesTest {
                     }
     }
 }
+
